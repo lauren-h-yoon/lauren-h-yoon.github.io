@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lauren Hyoseo Yoon</title>
 <meta name="description" content="Lauren Hyoseo Yoon — PhD student in Computation & Neural Systems at Caltech, working on efficient, stateful foundation models: multimodal alignment and active inference-time learning.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
@@ -60,8 +63,10 @@
   .dot.d1{background:var(--p1);}
   .dot.d2{background:var(--p2);}
 
-  .pub{padding:0 0 22px;}
+  .pub{padding:0 0 22px 16px;border-left:2px solid var(--line);margin-bottom:2px;}
   .pub:last-child{padding-bottom:2px;}
+  .pub.p1{border-left-color:rgba(2,170,157,.55);}
+  .pub.p2{border-left-color:rgba(254,149,28,.6);}
   .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.02em;
     padding:2px 10px;border-radius:999px;margin-bottom:8px;}
   .tag.t1{color:#0A7D73;background:rgba(2,170,157,.13);}
@@ -124,42 +129,42 @@
       <span><i class="dot d2"></i> Active Inference-Time Learning</span>
     </div>
 
-    <div class="pub">
+    <div class="pub p1">
       <span class="tag t1">Alignment</span>
       <div class="t">Escaping Plato's Cave: JAM for Aligning Independently Trained Vision and Language Models</div>
       <div class="v">PMLR / NeurIPS 2025 (UniReps)</div>
       <div class="d">Aligns frozen, independently trained vision and language backbones via small autoencoders meeting at a shared bottleneck. A novel Spread Loss turns the Platonic Representation Hypothesis into a training objective — matching a fine-tuned CLIP at ~1/3 of the FLOPs. <i>Google DeepMind; with Been Kim &amp; Yisong Yue.</i></div>
     </div>
 
-    <div class="pub">
+    <div class="pub p2">
       <span class="tag t2">Active Inference-Time Learning</span>
       <div class="t">Knowledge-Centric Self-Improvement (KCSI)</div>
       <div class="v">2026 · under submission</div>
       <div class="d">Agents stay generic and disposable; the only thing that persists is a shared, curated knowledge base. Transient agents attempt tasks and debate across them, and what survives is distilled into reusable bundles — higher solve rates at lower cost, transferring zero-shot across model families.</div>
     </div>
 
-    <div class="pub">
+    <div class="pub p2">
       <span class="tag t2">Active Inference-Time Learning</span>
       <div class="t">VendiEvolve: Towards Diversity-Aware LLM-Guided Evolutionary Search</div>
       <div class="v">ICML 2026 (Human-AI Co-Creativity)</div>
       <div class="d">LLM-guided evolutionary search collapses onto a single program family. VendiEvolve puts the Vendi Score into the loop as a control signal, steering selection toward diversity so the search keeps its stepping-stones to better solutions.</div>
     </div>
 
-    <div class="pub">
+    <div class="pub p1">
       <span class="tag t1">Alignment</span>
       <div class="t">Synthesizing Artificial Perception with a Wireless Transcranial Optogenetic Array</div>
       <div class="v">Nature Neuroscience 2025</div>
       <div class="d">Writes spatiotemporally patterned percepts into cortex via an addressable micro-LED array and decodes them to behavioral choice — installing a representation and reading out what the animal made of it.</div>
     </div>
 
-    <div class="pub">
+    <div class="pub p1">
       <span class="tag t1">Alignment</span>
       <div class="t">Striatal Ensemble Activity in an Innate Naturalistic Behavior</div>
       <div class="v">eLife 2023</div>
       <div class="d">A perception-to-representation pipeline: lifts markerless video to 3D pose, then aligns it with unsupervised population-level neural trajectories — movement and neural dynamics in one shared low-dimensional space.</div>
     </div>
 
-    <div class="pub">
+    <div class="pub p1">
       <span class="tag t1">Alignment</span>
       <div class="t">Wireless Multilateral Optofluidic Microsystems for Programmable Optogenetics &amp; Photopharmacology</div>
       <div class="v">Nature Communications 2022</div>
