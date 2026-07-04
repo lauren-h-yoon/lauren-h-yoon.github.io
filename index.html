@@ -23,7 +23,7 @@
   }
   ::selection{background:rgba(14,124,113,.14);}
 
-  .wrap{max-width:760px;margin:0 auto;padding:0 26px;}
+  .wrap{max-width:700px;margin:0 auto;padding:0 26px;}
 
   a{color:var(--accent);text-decoration:none;}
   a:hover{text-decoration:underline;text-underline-offset:3px;}
@@ -53,20 +53,22 @@
     color:var(--faint);margin-bottom:20px;
   }
 
-  /* two-pillar research */
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
-  .phead{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--p1);}
-  .col.p2 .phead{color:var(--p2);}
-  .phead small{display:block;font-weight:400;text-transform:none;letter-spacing:0;
-    font-size:12.5px;color:var(--faint);margin-top:3px;line-height:1.4;}
-  .prule{height:2px;background:var(--p1);margin:9px 0 16px;}
-  .col.p2 .prule{background:var(--p2);}
+  /* single-column research with flavor tags */
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:-8px 0 22px;font-size:12.5px;color:var(--soft);}
+  .legend span{display:inline-flex;align-items:center;gap:7px;}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+  .dot.d1{background:var(--p1);}
+  .dot.d2{background:var(--p2);}
 
-  .pub{padding:0 0 16px;}
-  .pub:last-child{padding-bottom:0;}
-  .pub .t{font-size:15px;font-weight:600;letter-spacing:-0.005em;line-height:1.38;}
-  .pub .v{font-size:13px;color:var(--faint);margin:2px 0 5px;}
-  .pub .d{font-size:14px;color:var(--soft);line-height:1.5;}
+  .pub{padding:0 0 22px;}
+  .pub:last-child{padding-bottom:2px;}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.02em;
+    padding:2px 10px;border-radius:999px;margin-bottom:8px;}
+  .tag.t1{color:#0A7D73;background:rgba(2,170,157,.13);}
+  .tag.t2{color:#B96100;background:rgba(254,149,28,.16);}
+  .pub .t{font-size:16px;font-weight:600;letter-spacing:-0.005em;line-height:1.4;}
+  .pub .v{font-size:13.5px;color:var(--faint);margin:2px 0 5px;}
+  .pub .d{font-size:14.5px;color:var(--soft);line-height:1.55;max-width:660px;}
   .pub .d i{font-style:italic;color:var(--faint);}
 
   /* terse role lines */
@@ -91,7 +93,6 @@
     header{flex-direction:column;gap:22px;padding-top:52px;}
     .photo{flex-basis:auto;width:150px;}
     h1{font-size:29px;}
-    .pillars{grid-template-columns:1fr;gap:30px;}
   }
 </style>
 </head>
@@ -109,6 +110,7 @@
       <div class="links">
         <a href="mailto:laurenhyoon@caltech.edu">Email</a>
         <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="https://scholar.google.com/citations?user=3SV95aMAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar</a>
         <a href="https://github.com/lauren-h-yoon" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/lauren-hyoseo-yoon-823715239/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -117,58 +119,51 @@
 
   <section id="research">
     <h2>Selected Research</h2>
-    <div class="pillars">
+    <div class="legend">
+      <span><i class="dot d1"></i> Alignment</span>
+      <span><i class="dot d2"></i> Active Inference-Time Learning</span>
+    </div>
 
-      <div class="col p1">
-        <div class="phead">Pillar I · Alignment
-          <small>Forcing independently-formed representations into one shared space.</small>
-        </div>
-        <div class="prule"></div>
+    <div class="pub">
+      <span class="tag t1">Alignment</span>
+      <div class="t">Escaping Plato's Cave: JAM for Aligning Independently Trained Vision and Language Models</div>
+      <div class="v">PMLR / NeurIPS 2025 (UniReps)</div>
+      <div class="d">Aligns frozen, independently trained vision and language backbones via small autoencoders meeting at a shared bottleneck. A novel Spread Loss turns the Platonic Representation Hypothesis into a training objective — matching a fine-tuned CLIP at ~1/3 of the FLOPs. <i>Google DeepMind; with Been Kim &amp; Yisong Yue.</i></div>
+    </div>
 
-        <div class="pub">
-          <div class="t">Escaping Plato's Cave: JAM for Aligning Independently Trained Vision and Language Models</div>
-          <div class="v">PMLR / NeurIPS 2025 (UniReps)</div>
-          <div class="d">Aligns frozen, independently trained vision and language backbones via small autoencoders meeting at a shared bottleneck. A novel Spread Loss turns the Platonic Representation Hypothesis into a training objective — matching a fine-tuned CLIP at ~1/3 of the FLOPs. <i>Google DeepMind; with Been Kim &amp; Yisong Yue.</i></div>
-        </div>
+    <div class="pub">
+      <span class="tag t2">Active Inference-Time Learning</span>
+      <div class="t">Knowledge-Centric Self-Improvement (KCSI)</div>
+      <div class="v">2026 · under submission</div>
+      <div class="d">Agents stay generic and disposable; the only thing that persists is a shared, curated knowledge base. Transient agents attempt tasks and debate across them, and what survives is distilled into reusable bundles — higher solve rates at lower cost, transferring zero-shot across model families.</div>
+    </div>
 
-        <div class="pub">
-          <div class="t">Synthesizing Artificial Perception with a Wireless Transcranial Optogenetic Array</div>
-          <div class="v">Nature Neuroscience 2025</div>
-          <div class="d">Writes spatiotemporally patterned percepts into cortex via an addressable micro-LED array and decodes them to behavioral choice — installing a representation and reading out what the animal made of it.</div>
-        </div>
+    <div class="pub">
+      <span class="tag t2">Active Inference-Time Learning</span>
+      <div class="t">VendiEvolve: Towards Diversity-Aware LLM-Guided Evolutionary Search</div>
+      <div class="v">ICML 2026 (Human-AI Co-Creativity)</div>
+      <div class="d">LLM-guided evolutionary search collapses onto a single program family. VendiEvolve puts the Vendi Score into the loop as a control signal, steering selection toward diversity so the search keeps its stepping-stones to better solutions.</div>
+    </div>
 
-        <div class="pub">
-          <div class="t">Striatal Ensemble Activity in an Innate Naturalistic Behavior</div>
-          <div class="v">eLife 2023</div>
-          <div class="d">A perception-to-representation pipeline: lifts markerless video to 3D pose, then aligns it with unsupervised population-level neural trajectories — movement and neural dynamics in one shared low-dimensional space.</div>
-        </div>
+    <div class="pub">
+      <span class="tag t1">Alignment</span>
+      <div class="t">Synthesizing Artificial Perception with a Wireless Transcranial Optogenetic Array</div>
+      <div class="v">Nature Neuroscience 2025</div>
+      <div class="d">Writes spatiotemporally patterned percepts into cortex via an addressable micro-LED array and decodes them to behavioral choice — installing a representation and reading out what the animal made of it.</div>
+    </div>
 
-        <div class="pub">
-          <div class="t">Wireless Multilateral Optofluidic Microsystems for Programmable Optogenetics &amp; Photopharmacology</div>
-          <div class="v">Nature Communications 2022</div>
-          <div class="d">A real-time connector system for the brain — a GUI front-end over an NFC/RF link driving up to 256 battery-free implants, with behavior read back from video.</div>
-        </div>
-      </div>
+    <div class="pub">
+      <span class="tag t1">Alignment</span>
+      <div class="t">Striatal Ensemble Activity in an Innate Naturalistic Behavior</div>
+      <div class="v">eLife 2023</div>
+      <div class="d">A perception-to-representation pipeline: lifts markerless video to 3D pose, then aligns it with unsupervised population-level neural trajectories — movement and neural dynamics in one shared low-dimensional space.</div>
+    </div>
 
-      <div class="col p2">
-        <div class="phead">Pillar II · Active Inference-Time Learning
-          <small>Directing test-time compute — what to explore, what to keep.</small>
-        </div>
-        <div class="prule"></div>
-
-        <div class="pub">
-          <div class="t">Knowledge-Centric Self-Improvement (KCSI)</div>
-          <div class="v">2026 · under submission</div>
-          <div class="d">Agents stay generic and disposable; the only thing that persists is a shared, curated knowledge base. Transient agents attempt tasks and debate across them, and what survives is distilled into reusable bundles — higher solve rates at lower cost, transferring zero-shot across model families.</div>
-        </div>
-
-        <div class="pub">
-          <div class="t">VendiEvolve: Towards Diversity-Aware LLM-Guided Evolutionary Search</div>
-          <div class="v">ICML 2026 (Human-AI Co-Creativity)</div>
-          <div class="d">LLM-guided evolutionary search collapses onto a single program family. VendiEvolve puts the Vendi Score into the loop as a control signal, steering selection toward diversity so the search keeps its stepping-stones to better solutions.</div>
-        </div>
-      </div>
-
+    <div class="pub">
+      <span class="tag t1">Alignment</span>
+      <div class="t">Wireless Multilateral Optofluidic Microsystems for Programmable Optogenetics &amp; Photopharmacology</div>
+      <div class="v">Nature Communications 2022</div>
+      <div class="d">A real-time connector system for the brain — a GUI front-end over an NFC/RF link driving up to 256 battery-free implants, with behavior read back from video.</div>
     </div>
   </section>
 
