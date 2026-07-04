@@ -4,138 +4,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lauren Hyoseo Yoon</title>
-<meta name="description" content="Lauren Hyoseo Yoon — PhD student in Computation & Neural Systems at Caltech. Engineering efficient, stateful foundation models: multimodal alignment and active inference-time learning.">
+<meta name="description" content="Lauren Hyoseo Yoon — PhD student in Computation & Neural Systems at Caltech, working on efficient, stateful foundation models: multimodal alignment and active inference-time learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
 <style>
-  /* ===========================================
-     THEME TOKENS — "Lab Index" (ported from the deck)
-     =========================================== */
   :root{
-    --bg:#FFFFFF; --surface:#FFFFFF; --inset:#F4F5F7; --ink:#1D1D1F; --muted:#86868B;
-    /* Pillar I: teal=published · Pillar II: orange=published (blue/pink reserved for future work) */
-    --p1:#02AA9D; --p2:#FE951C;
-    --fut1:#3187DE; --fut2:#FF88AC;
-    --line:#E7E7EC;
-    --shadow:0 1px 2px rgba(17,17,26,.04),0 10px 30px rgba(17,17,26,.06);
-    --font:'Instrument Sans',-apple-system,sans-serif;
-    --ease:cubic-bezier(.2,.7,.2,1);
+    --bg:#FDFDFC; --ink:#1A1A1A; --soft:#6B6B6B; --faint:#9A9A9A;
+    --line:#E9E9E6; --accent:#0E7C71;
+    --font:'Instrument Sans',-apple-system,BlinkMacSystemFont,sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--bg); color:var(--ink);
-    font-family:var(--font); font-size:17px; line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+    background:var(--bg);color:var(--ink);font-family:var(--font);
+    font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
   }
-  ::selection{background:rgba(2,170,157,.18);}
+  ::selection{background:rgba(14,124,113,.14);}
 
-  .wrap{max-width:860px;margin:0 auto;padding:0 28px;}
-  section{padding:56px 0 8px;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 26px;}
 
-  a{color:var(--p1);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s var(--ease);}
-  a:hover{border-bottom-color:currentColor;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;text-underline-offset:3px;}
 
-  /* --- eyebrow section label + full-width rule (deck + resume motif) --- */
-  .eyebrow{
-    font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--ink);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:26px;
+  /* ---------- HERO ---------- */
+  header{padding:76px 0 8px;display:flex;gap:34px;align-items:flex-start;}
+  .photo{
+    flex:0 0 168px;width:168px;border-radius:14px;overflow:hidden;
+    background:#F1F1EE;line-height:0;
+  }
+  .photo img{width:100%;height:auto;display:block;}
+  .intro{padding-top:4px;}
+  h1{font-size:33px;font-weight:600;letter-spacing:-0.02em;line-height:1.08;margin-bottom:6px;}
+  .role{font-size:16px;color:var(--soft);margin-bottom:16px;}
+  .role b{color:var(--ink);font-weight:600;}
+  .bio{font-size:16px;color:var(--ink);}
+  .bio p{margin-bottom:12px;}
+  .links{margin-top:18px;display:flex;flex-wrap:wrap;gap:16px;font-size:14.5px;}
+  .links a{color:var(--soft);}
+  .links a:hover{color:var(--accent);}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:38px 0 0;}
+  h2{
+    font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--faint);margin-bottom:18px;
   }
 
-  /* ===========================================
-     HERO
-     =========================================== */
-  header{padding:96px 0 30px;}
-  .hero-eyebrow{
-    font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);margin-bottom:18px;
+  /* publications */
+  .pub{padding:0 0 20px;}
+  .pub:last-child{padding-bottom:2px;}
+  .pub .t{font-size:16px;font-weight:600;letter-spacing:-0.005em;line-height:1.4;}
+  .pub .v{font-size:13.5px;color:var(--faint);margin:2px 0 5px;}
+  .pub .d{font-size:14.5px;color:var(--soft);line-height:1.55;}
+  .pub .d i{font-style:italic;color:var(--faint);}
+
+  /* terse role lines */
+  .item{
+    display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+    padding:9px 0;border-top:1px solid var(--line);
   }
-  h1{
-    font-size:clamp(38px,7vw,58px);font-weight:700;letter-spacing:-0.02em;line-height:1.06;
-    margin-bottom:14px;
-  }
-  h1 em{font-style:italic;font-weight:600;}
-  .hero-rule{width:56px;height:3px;background:var(--ink);margin:22px 0;}
-  .hero-sub{font-size:19px;color:var(--ink);max-width:620px;}
-  .hero-sub b{font-weight:700;}
-  .hero-aff{margin-top:10px;font-size:15px;color:var(--muted);}
-  .hero-links{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;}
-  .hero-links a{
-    display:inline-block;font-size:14px;font-weight:600;color:var(--ink);
-    padding:8px 16px;border:1px solid var(--line);border-radius:999px;
-    transition:border-color .2s var(--ease), background .2s var(--ease);
-  }
-  .hero-links a:hover{border-color:var(--ink);background:var(--inset);border-bottom-color:var(--ink);}
+  section .item:first-of-type{border-top:none;}
+  .item .l{font-size:15px;}
+  .item .l b{font-weight:600;}
+  .item .l span{color:var(--soft);}
+  .item .yr{font-size:13px;color:var(--faint);white-space:nowrap;}
+  .sub{font-size:13.5px;color:var(--faint);margin:-4px 0 4px;}
 
-  /* ===========================================
-     RESEARCH — two pillar cards
-     =========================================== */
-  .thesis{font-size:19px;max-width:700px;margin-bottom:30px;}
-  .thesis .hl1{color:var(--p1);font-weight:700;}
-  .thesis .hl2{color:var(--p2);font-weight:700;}
-  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-  .pcard{
-    background:var(--surface);border:1px solid var(--line);border-radius:16px;
-    padding:26px 26px 22px;box-shadow:var(--shadow);
-    border-top:3px solid var(--p1);
-  }
-  .pcard.p2{border-top-color:var(--p2);}
-  .pcard .pk{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
-  .pcard .ph{font-size:22px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;color:var(--p1);}
-  .pcard.p2 .ph{color:var(--p2);}
-  .pcard .pw{font-size:15px;color:var(--ink);}
-  .pcard .pw b{font-weight:700;}
-  .pcard .pcite{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);letter-spacing:.02em;}
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:52px;padding:22px 0 60px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--faint);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  footer a{color:var(--soft);}
 
-  /* ===========================================
-     PUBLICATIONS — grouped by pillar
-     =========================================== */
-  .pillar-head{margin:34px 0 6px;font-size:14px;font-weight:700;}
-  .pillar-head .tag{color:var(--p1);}
-  .pillar-head.p2 .tag{color:var(--p2);}
-  .pillar-head .frame{font-weight:400;color:var(--muted);}
-  .pillar-rule{height:2px;background:var(--p1);margin-bottom:18px;}
-  .pillar-rule.p2{background:var(--p2);}
-
-  .pub{
-    padding:16px 0 18px;border-bottom:1px solid var(--line);
-  }
-  .pub:last-child{border-bottom:none;}
-  .pub .t{font-size:16.5px;font-weight:700;letter-spacing:-0.005em;}
-  .pub .v{font-size:13px;color:var(--muted);margin:3px 0 7px;}
-  .pub .d{font-size:14.5px;color:var(--ink);max-width:760px;}
-  .pub .d b{font-weight:700;}
-  .pub .d i{color:var(--muted);}
-
-  /* ===========================================
-     EXPERIENCE / EDUCATION — terse role lines
-     =========================================== */
-  .role{padding:13px 0;border-bottom:1px solid var(--line);}
-  .role:last-child{border-bottom:none;}
-  .role .top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;}
-  .role .r{font-size:16px;}
-  .role .r b{font-weight:700;}
-  .role .dates{font-size:13px;color:var(--muted);white-space:nowrap;}
-  .role .note{font-size:14px;color:var(--muted);margin-top:2px;}
-
-  /* ===========================================
-     FOOTER
-     =========================================== */
-  footer{margin-top:64px;padding:34px 0 56px;border-top:1px solid var(--line);}
-  .foot-inner{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;}
-  .foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:600;}
-  .foot-links a{color:var(--ink);}
-  .foot-small{font-size:12.5px;color:var(--muted);}
-
-  /* ===========================================
-     RESPONSIVE
-     =========================================== */
-  @media (max-width:720px){
-    header{padding:64px 0 20px;}
-    section{padding:44px 0 6px;}
-    .pillars{grid-template-columns:1fr;}
-    .role .top{flex-direction:column;gap:2px;}
+  @media (max-width:640px){
+    header{flex-direction:column;gap:22px;padding-top:52px;}
+    .photo{flex-basis:auto;width:150px;}
+    h1{font-size:29px;}
   }
 </style>
 </head>
@@ -143,151 +88,87 @@
 
 <div class="wrap">
 
-  <!-- ================= HERO ================= -->
   <header>
-    <div class="hero-eyebrow">Architecting Intelligence</div>
-    <h1>Lauren Hyoseo <em>Yoon</em></h1>
-    <div class="hero-rule"></div>
-    <p class="hero-sub">I engineer <b>efficient, stateful foundation models</b> — from neural data to the frontier.</p>
-    <p class="hero-aff">PhD student, Computation &amp; Neural Systems, Caltech · advised by Yisong Yue</p>
-    <div class="hero-links">
-      <a href="mailto:laurenhyoon@caltech.edu">Email</a>
-      <a href="https://www.linkedin.com/in/lauren-hyoseo-yoon-823715239/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/lauren-h-yoon" target="_blank" rel="noopener">GitHub</a>
-      <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+    <div class="photo"><img src="portrait.jpg" alt="Lauren Hyoseo Yoon" width="666" height="1000"></div>
+    <div class="intro">
+      <h1>Lauren Hyoseo Yoon</h1>
+      <div class="role">PhD student, <b>Computation &amp; Neural Systems</b>, Caltech</div>
+      <div class="bio">
+        <p>I work on <b>efficient, stateful foundation models</b>. Two questions drive my research: how to align representations that were formed independently into one shared space, and how to let a model direct its own test-time compute so that reasoning and knowledge accumulate instead of evaporating.</p>
+        <p>Before Caltech I spent several years in computational neuroscience, aligning neural activity with behavior — the same problem, in biology. I'm advised by <a href="http://www.yisongyue.com/" target="_blank" rel="noopener">Yisong Yue</a>.</p>
+      </div>
+      <div class="links">
+        <a href="mailto:laurenhyoon@caltech.edu">Email</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+        <a href="https://github.com/lauren-h-yoon" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/lauren-hyoseo-yoon-823715239/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
   </header>
 
-  <!-- ================= RESEARCH ================= -->
   <section id="research">
-    <div class="eyebrow">Research</div>
-    <p class="thesis">
-      Today's models are <b>fragmented</b> and <b>forgetful</b>. My work attacks both bottlenecks —
-      <span class="hl1">multimodal alignment</span> in space, and
-      <span class="hl2">active inference-time learning</span> in time.
-    </p>
-    <div class="pillars">
-      <div class="pcard">
-        <div class="pk">Today's models are fragmented</div>
-        <div class="ph">Pillar I · Alignment</div>
-        <div class="pw">Vision, language, and other modalities are trained in isolation — they occupy <b>disjoint representational spaces</b>. I force independently-formed representations into one shared, low-dimensional space.</div>
-        <div class="pcite">Evidence: NeurIPS · Nat. Neuroscience · eLife · Nat. Communications</div>
-      </div>
-      <div class="pcard p2">
-        <div class="pk">Today's models are forgetful</div>
-        <div class="ph">Pillar II · Active Inference-Time Learning</div>
-        <div class="pw">Test-time reasoning and hard-won knowledge <b>evaporate after each run</b>. I make inference-time scaling <b>active</b> — the system chooses what to explore and what to keep, so compute compounds.</div>
-        <div class="pcite">Evidence: ICML · KCSI (2026)</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= SELECTED RESEARCH ================= -->
-  <section id="publications">
-    <div class="eyebrow">Selected Research</div>
-
-    <div class="pillar-head"><span class="tag">Pillar I · Multimodal Alignment</span> <span class="frame">— forcing independently-formed representations into one shared space</span></div>
-    <div class="pillar-rule"></div>
+    <h2>Selected Research</h2>
 
     <div class="pub">
       <div class="t">Escaping Plato's Cave: JAM for Aligning Independently Trained Vision and Language Models</div>
       <div class="v">PMLR / NeurIPS 2025 (UniReps)</div>
-      <div class="d">Aligns <em>frozen</em>, independently trained vision and language backbones with small per-modality autoencoders that meet at a shared bottleneck. A novel <b>Spread Loss</b> turns the Platonic Representation Hypothesis from something you <em>detect</em> into a training <em>objective</em> — matching a fine-tuned CLIP at ~1/3 of the FLOPs. <i>Google DeepMind; co-advised by Been Kim &amp; Yisong Yue.</i></div>
+      <div class="d">Aligns frozen, independently trained vision and language backbones with small per-modality autoencoders that meet at a shared bottleneck. A novel Spread Loss turns the Platonic Representation Hypothesis into a training objective — matching a fine-tuned CLIP at ~1/3 of the FLOPs. <i>Google DeepMind; with Been Kim &amp; Yisong Yue.</i></div>
     </div>
-
-    <div class="pub">
-      <div class="t">Synthesizing Artificial Perception with a Wireless Transcranial Optogenetic Array</div>
-      <div class="v">Nature Neuroscience 2025</div>
-      <div class="d">Writes spatiotemporally <em>patterned</em> percepts into cortex via an addressable micro-LED array and <b>decodes them to behavioral choice</b>; discrimination scales with stimulation-site distance (PCA-denoised). Installing a representation and reading out what the animal made of it.</div>
-    </div>
-
-    <div class="pub">
-      <div class="t">Striatal Ensemble Activity in an Innate Naturalistic Behavior</div>
-      <div class="v">eLife 2023</div>
-      <div class="d">A streaming <b>perception-to-representation pipeline</b>: lifts markerless video to 3D pose, then aligns it with unsupervised <b>population-level</b> neural trajectories (NMF) — movement and neural dynamics in one shared low-dimensional space. The same alignment problem as the AI work, in biology.</div>
-    </div>
-
-    <div class="pub">
-      <div class="t">Wireless Multilateral Optofluidic Microsystems for Programmable Optogenetics &amp; Photopharmacology</div>
-      <div class="v">Nature Communications 2022</div>
-      <div class="d">An <b>online connector system</b> for the brain — a GUI front-end bound to a high-frequency biological-signal backend over an NFC/RF link, driving up to 256 battery-free implants in real time, with behavior read back from video. The systems-engineering instinct that carries forward.</div>
-    </div>
-
-    <div class="pillar-head p2"><span class="tag">Pillar II · Active Inference-Time Learning</span> <span class="frame">— directing test-time compute: what to explore, what to keep</span></div>
-    <div class="pillar-rule p2"></div>
 
     <div class="pub">
       <div class="t">Knowledge-Centric Self-Improvement (KCSI)</div>
       <div class="v">2026 · under submission</div>
-      <div class="d">Inverts agent-centric self-improvement: agents stay generic and <b>disposable</b>, and the only thing that persists is a shared <b>curated knowledge base</b>. Transient agents attempt tasks and debate across them; what survives is distilled into reusable bundles. Higher solve rate at substantially lower cost (ARC, Polyglot, SWE-Bench Pro), 47.2% on Terminal-Bench, and bundles that transfer <b>zero-shot</b> across model families. <i>Current direction.</i></div>
+      <div class="d">Agents stay generic and disposable; the only thing that persists is a shared, curated knowledge base. Transient agents attempt tasks and debate across them, and what survives is distilled into reusable bundles — higher solve rates at lower cost, transferring zero-shot across model families.</div>
     </div>
 
     <div class="pub">
       <div class="t">VendiEvolve: Towards Diversity-Aware LLM-Guided Evolutionary Search</div>
       <div class="v">ICML 2026 (Human-AI Co-Creativity)</div>
-      <div class="d">LLM-guided evolutionary search collapses onto a single program family, losing the stepping-stones to better solutions. VendiEvolve puts the <b>Vendi Score</b> — the effective number of distinct programs — into the loop as a control signal steering selection toward diversity. <b>Diversity as a system control signal</b>; the population is the product, not just the single winner.</div>
+      <div class="d">LLM-guided evolutionary search collapses onto a single program family. VendiEvolve puts the Vendi Score into the loop as a control signal, steering selection toward diversity so the search keeps its stepping-stones to better solutions.</div>
+    </div>
+
+    <div class="pub">
+      <div class="t">Synthesizing Artificial Perception with a Wireless Transcranial Optogenetic Array</div>
+      <div class="v">Nature Neuroscience 2025</div>
+      <div class="d">Writes spatiotemporally patterned percepts into cortex via an addressable micro-LED array and decodes them to behavioral choice — installing a representation and reading out what the animal made of it.</div>
+    </div>
+
+    <div class="pub">
+      <div class="t">Striatal Ensemble Activity in an Innate Naturalistic Behavior</div>
+      <div class="v">eLife 2023</div>
+      <div class="d">A streaming perception-to-representation pipeline: lifts markerless video to 3D pose, then aligns it with unsupervised population-level neural trajectories — movement and neural dynamics in one shared low-dimensional space.</div>
+    </div>
+
+    <div class="pub">
+      <div class="t">Wireless Multilateral Optofluidic Microsystems for Programmable Optogenetics &amp; Photopharmacology</div>
+      <div class="v">Nature Communications 2022</div>
+      <div class="d">A real-time connector system for the brain — a GUI front-end over an NFC/RF link driving up to 256 battery-free implants, with behavior read back from video.</div>
     </div>
   </section>
 
-  <!-- ================= EXPERIENCE ================= -->
   <section id="experience">
-    <div class="eyebrow">Experience</div>
-
-    <div class="role">
-      <div class="top"><div class="r"><b>Student Researcher</b> · Google DeepMind / Brain</div><div class="dates">Jun 2024 – May 2025</div></div>
-      <div class="note">Multimodal alignment of frozen vision–language models (JAM).</div>
-    </div>
-    <div class="role">
-      <div class="top"><div class="r"><b>Research Intern, Biomedical Computing</b> · Microsoft Research (Health Futures)</div><div class="dates">Jun – Sep 2023</div></div>
-      <div class="note">Foundation models of human DNA; proposed a genotype-imputation fine-tuning task and an efficient raw-data handling framework.</div>
-    </div>
-    <div class="role">
-      <div class="top"><div class="r"><b>Research Scientist</b> · Querrey Simpson Institute for Bioelectronics, Northwestern</div><div class="dates">Fall 2023 – Jun 2024</div></div>
-      <div class="note">End-to-end analysis pipelines for artificial-perception experiments (optogenetic / neural signals).</div>
-    </div>
-    <div class="role">
-      <div class="top"><div class="r"><b>Research Scientist</b> · Kozorovitskiy Lab, Northwestern</div><div class="dates">Sep 2021 – Jun 2024</div></div>
-      <div class="note">Senior thesis: interpretable generative models of behavior from electrophysiology + video; co-advised by Ann Kennedy (Feinberg).</div>
-    </div>
-    <div class="role">
-      <div class="top"><div class="r"><b>Research Scientist</b> · Computational Neuroscience Lab, Feinberg School of Medicine</div><div class="dates">Mar 2022 – Jan 2024</div></div>
-      <div class="note">Python/ML behavior-tracking pipeline (MARS) characterizing circuit dysfunction in a Parkinson's mouse model.</div>
-    </div>
-    <div class="role">
-      <div class="top"><div class="r"><b>Research Assistant</b> · Social Identity &amp; Morality Lab, New York University</div><div class="dates">Jan – Sep 2021</div></div>
-      <div class="note">Built an automated social-media (Twitter API) program to test the backfire effect in fake-news discernment.</div>
-    </div>
+    <h2>Experience</h2>
+    <div class="item"><div class="l"><b>Student Researcher</b> <span>· Google DeepMind / Brain</span></div><div class="yr">2024–25</div></div>
+    <div class="item"><div class="l"><b>Research Intern</b> <span>· Microsoft Research, Health Futures</span></div><div class="yr">2023</div></div>
+    <div class="item"><div class="l"><b>Research Scientist</b> <span>· Querrey Simpson Institute for Bioelectronics, Northwestern</span></div><div class="yr">2023–24</div></div>
+    <div class="item"><div class="l"><b>Research Scientist</b> <span>· Kozorovitskiy Lab, Northwestern</span></div><div class="yr">2021–24</div></div>
+    <div class="item"><div class="l"><b>Research Scientist</b> <span>· Computational Neuroscience Lab, Feinberg (Northwestern)</span></div><div class="yr">2022–24</div></div>
+    <div class="item"><div class="l"><b>Research Assistant</b> <span>· Social Identity &amp; Morality Lab, NYU</span></div><div class="yr">2021</div></div>
   </section>
 
-  <!-- ================= EDUCATION ================= -->
   <section id="education">
-    <div class="eyebrow">Education</div>
-
-    <div class="role">
-      <div class="top"><div class="r"><b>Ph.D., Computation &amp; Neural Systems (CNS)</b> · California Institute of Technology</div><div class="dates">2024 – present</div></div>
-      <div class="note">Advisor: Yisong Yue.</div>
-    </div>
-    <div class="role">
-      <div class="top"><div class="r"><b>B.A., Mathematics &amp; Neuroscience (Honors)</b> · Northwestern University</div><div class="dates">2020 – 2024</div></div>
-    </div>
-    <div class="role">
-      <div class="top"><div class="r"><b>High School Diploma</b> · Korean Minjok Leadership Academy</div><div class="dates"></div></div>
-      <div class="note">Selective gifted boarding school, South Korea · International Philosophy Olympiad, National Representative (South Korea).</div>
-    </div>
+    <h2>Education</h2>
+    <div class="item"><div class="l"><b>Ph.D., Computation &amp; Neural Systems</b> <span>· Caltech</span></div><div class="yr">2024–</div></div>
+    <div class="sub">Advisor: Yisong Yue.</div>
+    <div class="item"><div class="l"><b>B.A., Mathematics &amp; Neuroscience</b>, Honors <span>· Northwestern University</span></div><div class="yr">2020–24</div></div>
   </section>
 
 </div>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  <div class="wrap foot-inner">
-    <div class="foot-links">
-      <a href="mailto:laurenhyoon@caltech.edu">laurenhyoon@caltech.edu</a>
-      <a href="https://www.linkedin.com/in/lauren-hyoseo-yoon-823715239/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/lauren-h-yoon" target="_blank" rel="noopener">GitHub</a>
-      <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
-    </div>
-    <div class="foot-small">© 2026 Lauren Hyoseo Yoon · Caltech</div>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;width:100%;">
+    <span>Lauren Hyoseo Yoon</span>
+    <span><a href="mailto:laurenhyoon@caltech.edu">laurenhyoon@caltech.edu</a> · Pasadena, CA</span>
   </div>
 </footer>
 
