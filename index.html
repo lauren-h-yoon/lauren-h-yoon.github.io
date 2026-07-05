@@ -76,6 +76,14 @@
   .pub .d{font-size:14.5px;color:var(--soft);line-height:1.55;max-width:660px;}
   .pub .d i{font-style:italic;color:var(--faint);}
 
+  /* updates feed */
+  .up{display:flex;gap:18px;align-items:baseline;padding:9px 0;border-top:1px solid var(--line);}
+  #updates .up:first-child{border-top:none;}
+  .up .when{flex:0 0 84px;font-size:12.5px;color:var(--faint);white-space:nowrap;letter-spacing:.01em;padding-top:1px;}
+  .up .what{font-size:15px;line-height:1.5;}
+  .up .what b{font-weight:600;}
+  .up .what em{font-style:italic;color:var(--soft);}
+
   /* terse role lines */
   .item{
     display:flex;justify-content:space-between;align-items:baseline;gap:18px;
@@ -121,6 +129,12 @@
       </div>
     </div>
   </header>
+
+  <section id="updates">
+    <h2>Updates</h2>
+    <!-- Edit updates.md to change this feed — one update per line: date | text -->
+    <div id="updates-feed"></div>
+  </section>
 
   <section id="research">
     <h2>Selected Research</h2>
@@ -172,16 +186,6 @@
     </div>
   </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="item"><div class="l"><b>Student Researcher</b> <span>· Google DeepMind / Brain</span></div><div class="yr">2024–25</div></div>
-    <div class="item"><div class="l"><b>Research Intern</b> <span>· Microsoft Research, Health Futures</span></div><div class="yr">2023</div></div>
-    <div class="item"><div class="l"><b>Research Scientist</b> <span>· Querrey Simpson Institute for Bioelectronics, Northwestern</span></div><div class="yr">2023–24</div></div>
-    <div class="item"><div class="l"><b>Research Scientist</b> <span>· Kozorovitskiy Lab, Northwestern</span></div><div class="yr">2021–24</div></div>
-    <div class="item"><div class="l"><b>Research Scientist</b> <span>· Computational Neuroscience Lab, Feinberg (Northwestern)</span></div><div class="yr">2022–24</div></div>
-    <div class="item"><div class="l"><b>Research Assistant</b> <span>· Social Identity &amp; Morality Lab, NYU</span></div><div class="yr">2021</div></div>
-  </section>
-
   <section id="education">
     <h2>Education</h2>
     <div class="item"><div class="l"><b>Ph.D., Computation &amp; Neural Systems</b> <span>· Caltech</span></div><div class="yr">2024–</div></div>
@@ -216,6 +220,21 @@
     fetch('bio.md',{cache:'no-cache'})
       .then(function(r){return r.text();})
       .then(function(md){document.getElementById('bio').innerHTML=render(md);})
+      .catch(function(){});
+
+    // Updates feed — edit updates.md, one per line: "date | text"
+    function renderUpdates(md){
+      return md.trim().split(/\n+/).map(function(line){
+        var i=line.indexOf('|');
+        if(i<0) return '';
+        var when=inline(line.slice(0,i).trim());
+        var what=inline(line.slice(i+1).trim());
+        return '<div class="up"><div class="when">'+when+'</div><div class="what">'+what+'</div></div>';
+      }).join('');
+    }
+    fetch('updates.md',{cache:'no-cache'})
+      .then(function(r){return r.text();})
+      .then(function(md){document.getElementById('updates-feed').innerHTML=renderUpdates(md);})
       .catch(function(){});
   })();
 </script>
