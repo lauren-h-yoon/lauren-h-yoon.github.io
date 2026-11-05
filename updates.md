@@ -1,3 +1,4 @@
+Dec 2026 | Joining Google (Seattle) as a Student Researcher.
 Jul 2026 | Selected as SK Hynix Global Scholar.
 2024–25 | Started student research collaboration with Google DeepMind / Brain.
 2024 | Began PhD in Computation & Neural Systems at Caltech, advised by [Yisong Yue](http://www.yisongyue.com/).
