@@ -1,4 +1,5 @@
 Dec 2026 | Joining Google (Seattle) as a Student Researcher.
+Nov 2026 | *Controlling False Discoveries via Auditing Scientific Agents* accepted for a lightning talk at [AgentEvalSci 2026](https://evalscience.org/2026fall-nyc/).
 Jul 2026 | Selected as SK Hynix Global Scholar.
 2024–25 | Started student research collaboration with Google DeepMind / Brain.
 2024 | Began PhD in Computation & Neural Systems at Caltech, advised by [Yisong Yue](http://www.yisongyue.com/).
